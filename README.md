@@ -1,4 +1,5 @@
 [![Open in Visual Studio Code](https://classroom.github.com/assets/open-in-vscode-f059dc9a6f8d3a56e377f745f24479a46679e63a5d9fe6f495e02850cd0d8118.svg)](https://classroom.github.com/online_ide?assignment_repo_id=5821484&assignment_repo_type=AssignmentRepo)
+
 # Supply Chain Exercise
 
 The Supply Chain directory is a truffle project that contains the required
@@ -19,7 +20,7 @@ project directory. There are **23 pending tests** that you must pass to complete
 this exercise.
 
 Similar to the Simple Bank Exercise, check out the test file to see the tests that define the behavior of the
-SupplyChain smart contract. 
+SupplyChain smart contract.
 
 <!-- Notice the tests are in `it` blocks and have a
 `skip` modifier, which disables the test. To enable the test, remove the
@@ -29,7 +30,7 @@ and `only` which runs only that test. But what if more than one test have the
 
 ### State variables
 
-  - [ ] should have an owner
+- [ ] should have an owner
     <details><summary>:book:</summary>
 
     The contract should have an owner, of type address that is public.
@@ -37,12 +38,12 @@ and `only` which runs only that test. But what if more than one test have the
 
     </details>
 
-  - [ ] should have an skuCount
+- [ ] should have an skuCount
     <details><summary>:book:</summary>
 
     The contract will keep track of the
     [sku](https://en.wikipedia.org/wiki/Stock_keeping_unit)s in our supply
-    chain. Each item for sale will have a unique sku number. 
+    chain. Each item for sale will have a unique sku number.
 
     **hint**: define a public variable called `skuCounter` of type uint
 
@@ -54,10 +55,10 @@ Items can exist in our Supply chain domain in a few states. In Solidity an
 `enum` can be used to represent these different states. Remove the `skip`
 annotation from the enum tests to proceed.
 
-  - [ ] should define `ForSale` for when an item is put on sale
-  - [ ] should define `Sold` for when an item has been purchased
-  - [ ] should define `Shipped` for when an item has been shippd to the buyer
-  - [ ] should define `Received` for when the shipped item has been received by the buyer
+- [ ] should define `ForSale` for when an item is put on sale
+- [ ] should define `Sold` for when an item has been purchased
+- [ ] should define `Shipped` for when an item has been shippd to the buyer
+- [ ] should define `Received` for when the shipped item has been received by the buyer
 
 ### Item struct
 
@@ -66,59 +67,59 @@ How do we describe an item in our supply chain? It is a union of properties:
 `struct` to model this Item. Remove the `skip` annotation from the `Item
 struct` tests and proceed.
 
-  - [ ] should have a `name`
-  - [ ] should have a `sku`
-  - [ ] should have a `price`
-  - [ ] should have a `state`
-  - [ ] should have a `seller`
-  - [ ] should have a `buyer`
+- [ ] should have a `name`
+- [ ] should have a `sku`
+- [ ] should have a `price`
+- [ ] should have a `state`
+- [ ] should have a `seller`
+- [ ] should have a `buyer`
 
 ### SupplyChain Use cases
 
 **NOTE** Before proceeding, you should un-comment the  `fetchItem` function in the contract. This function is necessary to validate the remaining tests.
 
-  - [ ] should add an item with the provided name and price
+- [ ] should add an item with the provided name and price
     <details><summary>:book:</summary>
-    use case: As a seller, I want to add an item for sale. I should 
+    use case: As a seller, I want to add an item for sale. I should
     </details>
-  - [ ] should emit a LogForSale event when an item is added
+- [ ] should emit a LogForSale event when an item is added
     <details><summary>:book:</summary>
     use case: Whenever an item is added (placed for sale), the contract should
     emit a `LogForSale` event
     </details>
-  - [ ] should allow someone to purchase an item and update state accordingly
+- [ ] should allow someone to purchase an item and update state accordingly
     <details><summary>:book:</summary>
     use case: As a buyer, I want to purchase an item that is for sale.
     </details>
- - [ ] should error when not enough value is sent when purchasing an item
+- [ ] should error when not enough value is sent when purchasing an item
     <details><summary>:book:</summary>
     use case: A buyer will be notified when they do not have enough funds for the purchase
     </details>
-  - [ ] should emit LogSold event when and item is purchased
+- [ ] should emit LogSold event when and item is purchased
     <details><summary>:book:</summary>
     use case: Whenever an item is bought (sold), the contract should emit a "LogSold" event
     </details>
-  - [ ] should revert when someone that is not the seller tries to call shipItem()
+- [ ] should revert when someone that is not the seller tries to call shipItem()
     <details><summary>:book:</summary>
     use case: As a seller, only I can ship a bought item
     </details>
-  - [ ] should allow the seller to mark the item as shipped
+- [ ] should allow the seller to mark the item as shipped
     <details><summary>:book:</summary>
     use case : Whenever an item is shipped, the seller should be able to mark the item as shipped
     </details>
-  - [ ] should emit a LogShipped event when an item is shipped
+- [ ] should emit a LogShipped event when an item is shipped
     <details><summary>:book:</summary>
     use case: Whenever the item is shipped, the contract should emit a "LogShipped" event
     </details>
-  - [ ] should allow the buyer to mark the item as received
+- [ ] should allow the buyer to mark the item as received
     <details><summary>:book:</summary>
     use case: Whenever an item is recieved, the buyer should be able to mark the item as received
     </details>
-  - [ ] should revert if an address other than the buyer calls receiveItem()
+- [ ] should revert if an address other than the buyer calls receiveItem()
     <details><summary>:book:</summary>
     use case: As a buyer, only I can mark the item as received
     </details>
-  - [ ] should emit a LogReceived event when an item is received
+- [ ] should emit a LogReceived event when an item is received
     <details><summary>:book:</summary>
     use case: Whenever an item is received, the contract should emit a "LogReceived" event
     </details>
